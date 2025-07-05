@@ -10,5 +10,5 @@ VOLUME /config
 # volume for input
 # volume to save library
 
-ENTRYPOINT beet
-CMD --help
+ENTRYPOINT ["beet"]
+CMD ["--help"]
