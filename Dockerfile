@@ -1,6 +1,10 @@
 FROM python:3.13-alpine
 
-RUN apk add --no-cache beets ffmpeg
+COPY requirements.txt .
+RUN apk add --no-cache ffmpeg cairo \
+ && apk add --no-cache --virtual build-deps build-base cairo-dev cmake pkgconf \
+ && pip install --no-cache-dir -r requirements.txt \
+ && apk del build-deps
 
 WORKDIR /opt/beets
 ENV BEETSDIR=/opt/beets
