@@ -4,6 +4,8 @@ COPY requirements.txt .
 
 RUN apk add --no-cache ffmpeg && pip install -r requirements.txt 
 
+COPY config.yaml .
+
 VOLUME /config
 
 # volume for music

@@ -1,0 +1,13 @@
+directory: /music
+library: /config/library.db
+
+import:
+  write: yes
+  copy: no
+  move: yes
+
+plugins: embedart fetchart parentwork replaygain
+replaygain:
+  backend: ffmpeg
+paths:
+    albumtype:soundtrack: Soundtracks/$album/$track $title
