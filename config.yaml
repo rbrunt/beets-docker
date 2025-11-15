@@ -6,8 +6,19 @@ import:
   copy: no
   move: yes
 
-plugins: embedart fetchart parentwork replaygain
-replaygain:
-  backend: ffmpeg
 paths:
     albumtype:soundtrack: Soundtracks/$album/$track $title
+
+plugins: embedart fetchart parentwork replaygain mbsync musicbrainz edit bpmanalyser
+
+replaygain:
+  auto: true
+  backend: ffmpeg
+
+
+bpmanalyser:
+  auto: no
+
+edit:
+  albumfields: album albumartist genre
+  itemfields: track title artist album genre
